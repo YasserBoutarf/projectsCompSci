@@ -1,91 +1,57 @@
 1. Enter the number of hours it took you to complete the project between
    the <<< and >>> signs below (eg, <<<10>>>).
 
-   <<< 15 >>>
+   <<< 6 >>>
    
 2. Enter the difficulty level (1: very easy; 5: very difficult) of the project
    between the <<< and >>> signs below (eg, <<<3>>>).
 
-   <<<3>>>
+   <<< 3 >>>
 
-3. Did you receive help from anyone? List their names, status (classmate,
+3. Did you receive help from anyone? List their names, status (classmate, 
    CS110 grad, TA, other), and the nature of help received.
 
-   Name                                Status       Help Received
-   Programming with Mosh               YouTube       Helped me understand the basic rules of python and the arithmetic needed and the parenthesis that goes into equations
+   Name               Status       Help Received
+   TA for section 1 and 5 just went over the exercise during class and went over topics such as classes which helped me understand it better.
 
-4. Provide a short description of how you approached each problem, issues you
+4. Provide a short description of how you approached each problem, issues you 
    encountered, and how you resolved those issues.
 
-   Problem 1 (Day of the Week)
-      Approach: Approaching this problem I listed my three arguments which is m, d, and y. I calculated the year, day and the month using arithmetic given to us in the problem.
-      I calculated the dow using arithmetic given to us in the problem as well. I converted dow into a string and I wrote dow.
+   Problem 1 (Particle Representation)
+      Approach: First we construct an empty blob using the class Blob. We set up the x and y variables and also the pixels.
+      Then we add those x and y coordinates to the empty blob. Then, I return the mass of this blob and the number of pixels in it.
+      Returns the Euclidean distance between the center of mass of this blob and the center of mass of the other blob. Then to find the new coordinates
+      and the pixels return a string representation of this blob.
 
-      Issues and resolution: I encountered no issues when running this problem.
+      Issues and resolution: I encountered no issues.
 
-   Problem 2 (Mercator Projection)
-      Approach: For this problem, it was fairly straightforward. I set up the arguments using the variables a and b as floats. Then, I set the x coordinate to b. I then converted
-      degrees into radians. Lastly, I used arithmetic to find the y value. I converted the x and y into strings and printed the output.
+   Problem 2 (Particle Identification)
+      Approach:First I construct a data type to identify blobs in a picture.
+              Constructs a blob finder to find blobs in the picture pic, using a luminance threshold tau then
+              initialize an empty list for the blobs in pic then create a 2D list of booleans called marked, having the same dimensions as pic.
+              Enumerate the pixels of pic, and for each pixel (i, j), create a Blob object called blob.
+              call self._findBlob() with the right arguments, Add blob to self.blobs if it has a non-zero mass,
+              Returns a list of all beads (blobs with mass >= pixels) and return if pixel (i, j) is out of bounds, or if it is marked, or if its
+              luminance is less than tau.
+              Add the pixel to blob and recursively call self._findBlob() on the N, E, W, S pixels.
+      Issues and resolution: I had no issues in this problem
 
-      Issues and resolution: I found no problems although if I did Snell's law after I believe I would come across the parenthesis problem stated in Snell's law.
+   Problem 3 (Particle Tracking)
+      Approach: Accept inputs that are given in problem as command line arguments and then compute arithmetic from one bead to another using frames,
+      for each bead in every frame also identify the one in the previous one that is
+      close to radius, delta and closest to currBead and if there is one set it to true.
+      Then write as a new line and set prevbeads to currbeads.
 
-   Problem 3 (Great Circle Distance)
-      Approach: First, I accept x1 (float), y1 (float), x2 (float), and y2 (float) as command-line arguments. As stated in the problem we find the distance using the expression
-      given to us in the problem and wrote my output.
+      Issues and resolution: I had no problems with this problem.
 
-      Issues and resolution: I encountered no issues when running this problem.
+   Problem 4 (Data Analysis)
+      Approach: First enter the variables given in problem and then accept displacement of beads from standard input and compute variance
+      then compute constants and write to standard output
 
-   Problem 4 (Wind Chill)
-      Approach: In my opinion this was one of the easiest problems I solved. First I entered my arguments which was t and v entered in as floats. I find the wind chill by using the
-      math expression given in the problem. Then I lastly wrote windchill.
-
-      Issues and resolution: I encountered no issues when running this problem.
-
-   Problem 5 (Gravitational Force)
-      Approach: I entered float(m1, m2, and r) as arguments. Used the mathematical expression in the problem to find G which represented the
-      gravitational constant. Then, find gravitational force by using g previously to plug in and entering parameters. Then lastly, write gravitational force.
-
-      Issues and resolution: I encountered no issues when running this problem.
-
-   Problem 6 (Snell's Law)
-      Approach: Approaching this problem, I wrote out the three command line arguments, in my next steps I converted theta1 into radians, then applied the sin function to theta 1.
-      I used basic arithmetic to find sin theta2. I used arc sin to get an output of theta2. And since my output should be in degrees I converted it back to degrees.
-
-      Issues and resolution: This code was one of the two that I struggled with the most which took up most of the time stated. Reviewing my code it would run perfectly aside
-      from receiving the wrong output. I began rewriting the code multiple times attempting to get a different outcome. I would stare at my code blankly hoping that I would
-      finally get an idea. That is when I watched a basics python course on YouTube that showed me how crucial parenthesis were in your arithmetic.
-
-   Problem 7 (Gambler's Ruin)
-      Approach: First I accepted n1, n2, and p as floats and command line arguments. As stated in the problem I found the probability of the second player. I found the probability
-      of the unfair coin for p1 and p2. Lastly, I wrote the two possibilities with a space in between.
-
-      Issues and resolution: I encountered no issues when running this problem.
-
-   Problem 8 (Waiting Time)
-      Approach: First I accept float(a) and float(t) as command line arguments. Then I find the value of p using the mathematical expression given. Lastly, I
-      write the value of p.
-
-      Issues and resolution: I encountered no issues when running this problem.
-
-   Problem 9 (Die Roll)
-      Approach: This was also a straightforward problem where it was fairly short. I entered sides as an argument which was labeled as an integer. I then just copied what the problem
-      asked me to do which was to use stdrandom.uniformInt which allowed me to calculate the possibility for a first and second roll. Towards the end I found the sum of the both rolls and printed
-      the output.
-
-      Issues and resolution: I encountered no issues when running this problem.
-
-   Problem 10 (Three Sort)
-      Approach: I wrote x, y, and z as integers which are command line arguments. I found the minimum and maximum using min() and max() of the three points. To get the middle value
-      I simply subtracted the three points from the min and max and printed the integers in order.
-
-      Issues and resolution: I had no issues running this code
+      Issues and resolution: This was one of the shortest ones and was the easiest as well.
 
 5. List any other comments here. Feel free to provide any feedback on how
    much you learned from doing the assignment, and whether you enjoyed
    doing it.
 
-I believe that this project introduced me to a much better understanding of code. It allowed me to use common sense and problem solving skills allowing me to sit down and review my code over
-and over again. Having this patience allowed me to fully understand my code instead of just writing it not understanding the role that each string of code played in it. I honestly
-enjoyed it when I was understanding it thoroughly but when I was having trouble doing snell's law it was aggravating me. Although, I felt like giving up I sat down and reviewed my code which made
-me realize what a silly mistake I made. I hope the projects in the future will challenge me more allowing me to use more critical thinking skills.
-   ...
+    I have no other comments but this was a pretty easy project that helped me understand classes and functions better.
