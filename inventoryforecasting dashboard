@@ -1,0 +1,36 @@
+# Inventory Forecasting Dashboard Template
+from flask import Flask, jsonify, request
+from fbprophet import Prophet
+import pandas as pd
+
+app = Flask(__name__)
+
+# Placeholder: Load inventory data
+def load_data(file_path='path_to_inventory_data.csv'):
+    data = pd.read_csv(file_path)
+    data.columns = ['ds', 'y']  # Prophet requires specific column names: ds (date), y (value)
+    return data
+
+# Train the forecasting model
+def train_forecasting_model(data):
+    model = Prophet()
+    model.fit(data)
+    return model
+
+# Generate future forecasts
+def generate_forecast(model, periods=30):
+    future = model.make_future_dataframe(periods=periods)
+    forecast = model.predict(future)
+    return forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
+
+# API endpoint to retrieve forecast data
+@app.route('/forecast', methods=['GET'])
+def get_forecast():
+    data = load_data()
+    model = train_forecasting_model(data)
+    forecast = generate_forecast(model)
+    forecast_json = forecast.to_dict(orient='records')
+    return jsonify(forecast_json)
+
+if __name__ == '__main__':
+    app.run(debug=True)
